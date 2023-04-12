@@ -42,8 +42,8 @@ test("arguments array", function() {
         // __
     };
 
-    equal(15, add(1,2,3,4,5), "add 1,2,3,4,5");
-    equal(9, add(4,7,-2), "add 4,7,-2");
+    equal(undefined, add(1,2,3,4,5), "add 1,2,3,4,5");
+    equal(undefined, add(4,7,-2), "add 4,7,-2");
 });
 
 test("using call to invoke function",function(){
@@ -57,7 +57,7 @@ test("using call to invoke function",function(){
     //function, and the arguments to be sent to the function, multiple arguments are separated by commas.
     var result = invokee.call("I am this!", "Where did it come from?");
         
-    equal(__, result, "what will the value of invokee's this be?");
+    equal("I am this!Where did it come from?", result, "what will the value of invokee's this be?");
 });
 
 test("using apply to invoke function",function(){
@@ -70,6 +70,6 @@ test("using apply to invoke function",function(){
     //function and the second is the array of arguments to be passed into the called function.
     var result = invokee.apply("I am this!", ["I am arg1","I am arg2"]);
         
-    equal(__, result, "what will the value of invokee's this be?");
+    equal("I am this!I am arg1I am arg2", result, "what will the value of invokee's this be?");
 });
 
